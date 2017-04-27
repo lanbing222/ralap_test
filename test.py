@@ -1,7 +1,7 @@
 import os
 import sys
 dict_list={}
-with open("src/name.txt","r") as f:
+with open("database/name.txt","r") as f:
     name_list=f.readlines()
     for name in name_list:
         wo=name.split()[0]

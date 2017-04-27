@@ -1,0 +1,4 @@
+pc	5000
+pan	5
+ipad	2000
+T-shit	200
