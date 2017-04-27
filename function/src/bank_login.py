@@ -3,8 +3,9 @@
 from  collections import defaultdict
 def bank_login_fun():
     bank_info_dict=defaultdict(list)
-    with open("function/database/indent_ID.txt",'r') as f:
+    with open("../database/indent_ID.txt",'r') as f:
         line=f.readlines()
+    f.close()
     for bank_line in line:    
         if len(bank_line)==0:continue
         bank_name=bank_line.split()[0]
@@ -27,6 +28,4 @@ def bank_login_fun():
             print "sorry ,your name is not exist,please check!!" 
             return 0
         login_times=login_times+1
-    print bank_info_dict.items()
-
 bank_login_fun()
