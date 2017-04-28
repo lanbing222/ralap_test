@@ -11,7 +11,6 @@ def bank_login_fun():
         bank_name=bank_line.split()[0]
         bank_info_dict[bank_name].append(bank_line.split()[1])
         bank_info_dict[bank_name].append(bank_line.split()[2])
-    
     login_times=0
     while True:
         if login_times > 2 : break

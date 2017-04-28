@@ -11,7 +11,7 @@ def  check_my_account():
         bank_name=bank_line.split()[0]
         cardID_info_dict[bank_name].append(bank_line.split()[1])
         cardID_info_dict[bank_name].append(bank_line.split()[2])
-    print cardID_info_dict
+#     print cardID_info_dict
     cardID=raw_input("input your cardID:").strip()
     if cardID_info_dict.has_key(cardID):
         print "your card' limitd is ",cardID_info_dict[cardID][0]
