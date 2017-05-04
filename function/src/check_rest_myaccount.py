@@ -1,17 +1,23 @@
 #coding=utf-8
 #查询余额
-from  collections import defaultdict
+# from  collections import defaultdict
+import pickle
 def  check_my_account(): 
-    cardID_info_dict=defaultdict(list)
+    cardID_info_dict={}
     with open("../database/bank_info.txt",'r') as f:
         line=f.readlines()
     f.close()
     for bank_line in line:    
         if len(bank_line)==0:continue
         bank_name=bank_line.split()[0]
-        cardID_info_dict[bank_name].append(bank_line.split()[1])
-        cardID_info_dict[bank_name].append(bank_line.split()[2])
+        cardID_info_dict.setdefault(bank_name,[]).append(bank_line.split()[1])
+        cardID_info_dict.setdefault(bank_name,[]).append(bank_line.split()[2])
+#         cardID_info_dict[bank_name].append(bank_line.split()[1])
+#         cardID_info_dict[bank_name].append(bank_line.split()[2])
 #     print cardID_info_dict
+    bank_info_file=file("../database/bank_info.db",'w')
+    bank_info_file.write(pickle.dumps(cardID_info_dict))
+    bank_info_file.close()
     cardID=raw_input("input your cardID:").strip()
     if cardID_info_dict.has_key(cardID):
         print "your card' limitd is ",cardID_info_dict[cardID][0]
