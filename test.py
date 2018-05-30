@@ -22,7 +22,8 @@ def bank_login_fun():
     f1.close()
     f1=file("function/database/inde1.txt",'r')
     
-    print type(pickle.load(f1))
+#     print type(pickle.load(f1))
+    print pickle.load(f1)
     
 #     f1=file("function/database/inde.txt",'w')
 #     f1.write(json.dumps(bank_info_dict))
